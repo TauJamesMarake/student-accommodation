@@ -1,1 +1,143 @@
+<style>
+    /* Footer Styles */
+    footer {
+        background-color: var(--primary-black);
+        color: var(--primary-white);
+        padding: 3rem 5%;
+    }
 
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 1400px;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+
+
+    .footer-section h3 {
+        color: var(--primary-gold);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .footer-section p {
+        color: var(--text-light);
+        line-height: 1.8;
+        opacity: 0.9;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-section ul li {
+        margin-bottom: 0.5rem;
+    }
+
+
+    .footer-section a {
+        color: var(--text-light);
+        text-decoration: none;
+        transition: color 0.3s;
+        display: inline-block;
+    }
+
+    .footer-section a:hover {
+        color: var(--primary-gold);
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(193, 154, 107, 0.3);
+        color: var(--text-light);
+        opacity: 0.8;
+    }
+
+    .footer-bottom p {
+        margin: 0;
+    }
+
+    /* Responsive Footer */
+    @media (max-width: 768px) {
+        footer {
+            padding: 2rem 5%;
+        }
+
+        .footer-content {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .footer-section {
+            text-align: center;
+        }
+    }
+</style>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>KS Centre</h3>
+            <p>Quality student accommodation in the heart of Welkom, Free State. Your home away from home.</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about/about.html">About Us</a></li>
+                <li><a href="../accommodation/accommodation.html">Accommodation</a></li>
+                <li><a href="../facilities/facilities.html">Facilities</a></li>
+
+                <li><a href="../gallery/gallery.html">Gallery</a></li>
+                <li><a href="../contact/contact.html">Contact</a></li>
+                <li><a href="../apply/apply.html">Apply Now</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <ul>
+                <li>📍 8074 Ndaki St (CNR), Welkom, Free State, 9478</li>
+                <li>📞 <a href="tel:+27791968482">079 196 8482</a></li>
+                <li>💬 <a href="https://wa.me/27791968482" target="_blank">WhatsApp: 079 196 8482</a></li>
+                <li>📧 <a href="mailto:info@kscentre.co.za">info@ks
+
+                        centre.co.za</a></li>
+                <li>⏰ Mon-Fri: 8:00 AM - 5:00 PM</li>
+                <li>⏰ Sat: 9:00 AM - 1:00 PM</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="#" target="_blank">Facebook</a></li>
+                <li><a href="#" target="_blank">Instagram</a></li>
+                <li><a href="#" target="_blank">Twitter</a></li>
+                <!-- <li><a href="#" target="_blank">LinkedIn</a></li> -->
+            </ul>
+            <br>
+            <h3>Legal</h3>
+
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> KS Centre Student Accommodation. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // Auto-update copyright year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+</script>
