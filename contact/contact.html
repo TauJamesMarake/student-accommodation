@@ -1,1 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font-awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <title>Contact Us - KS Centre Student Accommodation</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="../components/colors.css">
+</head>
+
+<body data-theme="light">
+    <!-- page header -->
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">KS Centre</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../accommodation/accommodation.html">Rooms</a></li>
+                <li><a href="../facilities/facilities.html">Facilities</a></li>
+                <li><a href="../gallery/gallery.html">Gallery</a></li>
+                <li><a href="../about/about.html">About</a></li>
+
+                <li><a href="#">Contact</a></li>
+                <li><button class="theme-toggle" onclick="toggleTheme()" class="fa-solid fa-lightbulb">🌓</button></li>
+                <li><a href="../apply/apply.html" class="btn-apply">Apply Now</a></li>
+            </ul>
+
+            <!-- mobile burger icon -->
+            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
+        </nav>
+    </header>
+
+    <!-- header -->
+    <section class="page-header">
+        <h1>Contact Us</h1>
+        <p>We're Here to Help - Get in Touch Today</p>
+    </section>
+
+    <!-- contact -->
+    <section class="contact-section">
+        <div class="contact-grid">
+            <!-- contact information -->
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-content">
+                        <h3>Our Address</h3>
+                        <p>8074 Ndaki St, Thabong Ext. 3,<br>Welkom, Free State,<br>9478, South Africa</p>
+                    </div>
+                </div>
+
+
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div class="info-content">
+                        <h3>Phone</h3>
+                        <p><a href="tel:+27791968482">079 196 8482</a></p>
+                        <p>Call us during office hours</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">💬</div>
+                    <div class="info-content">
+                        <h3>WhatsApp</h3>
+                        <p><a href="https://wa.me/27791968482" target="_blank">079 196 8482</a></p>
+                        <p>Quick responses via WhatsApp</p>
+
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">📧</div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p><a href="mailto:info@ksc.co.za">info@ksc.co.za</a></p>
+                        <p>We'll respond within 24 hours</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <div class="success-message" id="successMessage">
+
+                    Thank you! Your message has been sent successfully. We'll get back to you soon.
+                </div>
+                <form id="contactForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="application">Application Information</option>
+                            <option value="viewing">Schedule a Viewing</option>
+
+                            <option value="pricing">Pricing & Availability</option>
+                            <option value="maintenance">Maintenance Request</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Send Message</button>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- office hours -->
+    <section class="hours-section">
+        <div class="hours-container">
+            <div class="hours-card">
+                <h2>Office Hours</h2>
+                <ul class="hours-list">
+                    <li>
+                        <span class="day">Monday - Friday</span>
+                        <span class="time">8:00 AM - 5:00 PM</span>
+                    </li>
+                    <li>
+                        <span class="day">Saturday</span>
+                        <span class="time">9:00 AM
+
+                            - 1:00 PM</span>
+                    </li>
+                    <li>
+                        <span class="day">Sunday</span>
+                        <span class="time">Closed</span>
+                    </li>
+                    <li>
+                        <span class="day">Public Holidays</span>
+                        <span class="time">Closed</span>
+                    </li>
+                </ul>
+                <p style="margin-top: 2rem; color: var(--text-secondary);">
+                    For urgent matters outside office hours, please contact us via WhatsApp
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- map section -->
+    <section class="map-section">
+        <div class="map-container">
+            <h2 class="section-title">Find <span>Us</span></h2>
+            <div class="map-placeholder">🗺️</div>
+            <p class="map-note">Google Maps location</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- WhatsApp Float Button -->
+    <div id="footer-placeholder"></div>
+    <div id="whatsapp-placeholder"></div>
+
+    <script src="../components/components-integration.js"></script>
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+
+        }
+
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            // .. show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+
+            // .. reset form
+            document.getElementById('contactForm').reset();
+
+            // .. hide message after 5 seconds
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+
+            // .. scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            // .. here you would normally send the form data to your server
+            console.log('Form submitted');
+        }
+
+        // .. load saved theme
+        window.addEventListener('DOMContentLoaded', () => {
+
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+        });
+    </script>
+</body>
+
+</html>
