@@ -1,1 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font-awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <title>Apply Now - KS Centre Student Accommodation</title>`
+    <link rel="stylesheet" href="apply.css">
+    <link rel="stylesheet" href="../components/colors.css">
+
+</head>
+
+<body data-theme="light">
+    <!-- header -->
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">KS Centre</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../accommodation/accommodation.html">Rooms</a></li>
+                <li><a href="../facilities/facilities.html">Facilities</a></li>
+                <li><a href="../gallery/gallery.html">Gallery</a></li>
+                <li><a href="../about/about.html">About</a></li>
+
+                <li><a href="../contact/contact.html">Contact</a></li>
+                <li><button class="theme-toggle" onclick="toggleTheme()" class="fa-solid fa-lightbulb">🌓</button></li>
+                <li><a href="#" class="btn-apply">Apply Now</a></li>
+            </ul>
+
+            <!-- mobile burger icon -->
+            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
+        </nav>
+    </header>
+
+    <!-- page header -->
+    <section class="page-header">
+        <h1>Apply for Accommodation</h1>
+        <p>Secure Your Room at KS Centre
+
+            Today</p>
+    </section>
+
+    <!-- progress steps -->
+    <section class="progress-section">
+        <div class="progress-container">
+            <div class="steps">
+                <div class="step active">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Fill Application</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Review & Submit</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Confirmation</div>
+                </div>
+    </section>
+
+    <!-- application form -->
+    <section class="application-section">
+        <div class="form-container">
+            <h2 class="section-title">Accommodation Application</h2>
+            <p class="section-subtitle">Please fill in all required fields marked with *</p>
+
+            <div class="success-message" id="successMessage">
+                <h3>✓ Application Submitted Successfully!</h3>
+                <p>Thank you for your
+
+                    application. We have received your information and will contact you within 48 hours.</p>
+                <p>Your application reference number is: <strong id="refNumber"></strong></p>
+            </div>
+
+            <form id="applicationForm" onsubmit="handleSubmit(event)">
+                <!-- Personal Information -->
+                <div class="form-section">
+                    <h3>Personal Information</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name <span class="required">*</span></label>
+                            <input type="text" id="firstName" name="firstName" required>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name <span class="required">*</span></label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="idNumber">ID Number <span class="required">*</span></label>
+                            <input type="text" id="idNumber" name="idNumber" pattern="[0-9]{13}" maxlength="13"
+                                required>
+                            <small class="help-text">13-digit South African ID number</ small>
+                        </div>
+                        <div class="form-group">
+                            <label for="dateOfBirth">Date of Birth <span class="required">*</span></label>
+                            <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="gender">Gender <span class="required">*</span></label>
+                            <select id="gender" name="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                                <option value="prefer-not-to-say">Prefer not to say</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="nationality">Nationality <span class="required">*</span></label>
+                            <input type="text" id="nationality" name="nationality" value="South African" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="form-section">
+                    <h3>Contact Information</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" maxlength="10" required>
+                            <small class="help-text">10-digit number (e.g., 0821234567)</small>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Home Address <span class="required">*</span></label>
+                        <textarea id="address" name="address" rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="emergencyName">Emergency Contact Name <span class="required">*</span></label>
+                            <input type="text" id="emergencyName" name="emergencyName" required>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="emergencyPhone">Emergency Contact Number <span class="required">*</span></label>
+                            <input type="tel" id="emergencyPhone" name="emergencyPhone" pattern="[0-9]{10}"
+                                maxlength="10" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Academic Information -->
+                <div class="form-section">
+                    <h3>Academic Information</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+
+                            <label for="institution">University/College <span class="required">*</span></label>
+                            <select id="institution" name="institution" required>
+                                <option value="">Select Institution</option>
+                                <option value="university-of-free-state">University of the Free State</option>
+                                <option value="central-university-technology">Central University of Technology</option>
+                                <option value="goldfields-tvet">Goldfields TVET College</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="studentNumber">Student Number</label>
+                            <input type="text" id="studentNumber" name="studentNumber">
+                            <small class="help-text">If already registered</small>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="course">Course/Program <span class="required">*</span></label>
+                            <input type="text" id="course" name="course" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="yearOfStudy">Year of Study <span class="required">*</span></label>
+                            <select id="yearOfStudy" name="yearOfStudy" required>
+                                <option value="">Select Year</option>
+                                <option value="1">1st Year</option>
+                                <option value="2">2nd Year</option>
+                                <option value="3">3rd Year</option>
+                                <option value="4">4th Year</option>
+                                <option value="5+">5th Year+</option>
+                                <option value="postgrad">Postgraduate</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Accommodation Preferences -->
+                <div class="form-section">
+                    <h3>Accommodation Preferences</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="roomType">Room Type Preference <span class="required">*</span></label>
+                            <select id="roomType" name="roomType" required onchange="updatePrice()">
+                                <option value="">Select Room Type</option>
+                                <option value="sharing" data-price="1800">Sharing Room (R1,800/month)</option>
+
+                                <!-- <option value="single" data-price="2500">Single Room (R2,500/month)</option> -->
+                                <!-- <option value="bachelor" data-price="3200">Bachelor Unit (R3,200/month)</option> -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="moveInDate">Preferred Move-In Date <span class="required">*</span></label>
+                            <input type="date" id="moveInDate" name="moveInDate" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="leasePeriod">Lease Period <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="lease10" name="leasePeriod" value="10" required>
+                                <label for="lease10">10 Months</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- funding information -->
+                <div class="form-section">
+                    <h3>Funding Information</h3>
+
+                    <div class="form-group">
+                        <label>How will you be paying for accommodation? <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="fundingNSFAS" name="fundingType" value="nsfas" required
+                                    onclick="showNSFASInfo()">
+                                <label for="fundingNSFAS">NSFAS Funding</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="fundingBursary" name="fundingType" value="bursary"
+                                    onclick="hideNSFASInfo()">
+                                <label for="fundingBursary">Other Bursary</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="fundingSelf" name="fundingType" value="self"
+                                    onclick="hideNSFASInfo()">
+                                <label for="fundingSelf">Self-Funded</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="fundingParent" name="fundingType" value="parent"
+                                    onclick="hideNSFASInfo()">
+                                <label for="fundingParent">Parent/Guardian</label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- NSFAS Information Box -->
+                    <div id="nsfasInfoBox" class="nsfas-info" style="display: none;">
+                        <h4>📋 NSFAS Accommodation Application Process</h4>
+                        <p>If you are funded by NSFAS, please follow these steps:</p>
+                        <ul>
+                            <li><strong>Step 1:</strong> Ensure you have applied for NSFAS funding and received approval
+                            </li>
+                            <li><strong>Step 2:</strong> Log in to your NSFAS account and select accommodation allowance
+                            </li>
+                            <li><strong>Step 3:</strong> Choose KS Centre as your preferred accommodation from the
+                                approved list</li>
+                            <li><strong>Step 4:</ strong> Complete this application form and indicate your NSFAS funding
+                                    status</li>
+                            <li><strong>Step 5:</strong> Upload your NSFAS approval letter or confirmation</li>
+                        </ul>
+                        <p><strong>Important:</strong> KS Centre will verify your NSFAS status directly with NSFAS
+                            before confirming your booking. Applicants with approved NSFAS funding are prioritized for
+                            accommodation.</p>
+                        <a href="https://www.nsfas.org.za/" target="_blank" class="nsfas-link">Visit NSFAS Website →</a>
+                    </div>
+
+                    <!-- NSFAS Status -->
+                    <div id="nsfasStatusSection" style="display: none;">
+                        <div class="form-group">
+                            <label for="nsfasStatus">NSFAS Approval Status <span class="required">*</span></label>
+                            <select id="nsfasStatus" name="nsfasStatus">
+                                <option value="">Select Status</option>
+                                <option value="approved">Approved - Funding Confirmed</option>
+                                <option value="pending">Pending Approval</option>
+                                <option value="appealing">Under Appeal</option>
+                                <option value="not-applied">Not Yet Applied</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="nsfasNumber">NSFAS Reference Number</label>
+                            <input type="text" id="nsfasNumber" name="nsfasNumber">
+                            <small class="help-text">Your NSFAS application reference number</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nsfasDocument">Upload NSFAS Approval Letter/Confirmation</label>
+                            <div class="file-upload">
+                                <input type="file" id="nsfasDocument" name="nsfasDocument" accept=".pdf,.jpg,.jpeg,.png"
+                                    onchange="displayFileName(this, 'nsfasFileName')">
+                                <label class="file-upload-label" for="nsfasDocument">
+                                    📄 Click to upload document (PDF, JPG, PNG)
+                                </label>
+                            </div>
+                            <div class="file-name" id="nsfasFileName"></div>
+                            <small class="help-text">Upload your NSFAS approval letter if available. This helps us
+                                prioritize your application.</small>
+                        </div>
+                    </div>
+
+                    <!-- Other Funding Details -->
+                    <div id="otherFundingSection" style="display: none;">
+                        <div class="form-group">
+
+                            <label for="bursaryName">Bursary/Sponsor Name</label>
+                            <input type="text" id="bursaryName" name="bursaryName">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Required Documents -->
+                <div class="form-section">
+                    <h3>Required Documents</h3>
+                    <p class="section-subtitle">Please upload the following documents to complete your application</p>
+
+                    <div class="form-group">
+                        <label for="idDocument">Copy of ID/Passport <span class="required">*</span></label>
+
+                        <div class="file-upload">
+                            <input type="file" id="idDocument" name="idDocument" accept=".pdf,.jpg,.jpeg,.png" required
+                                onchange="displayFileName(this, 'idFileName')">
+                            <label class="file-upload-label" for="idDocument">
+                                📄 Click to upload ID document
+                            </label>
+                        </div>
+                        <div class="file-name" id="idFileName"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="proofOfRegistration">Proof of Registration/Acceptance Letter</label>
+                        <div class="file-upload">
+
+                            <input type="file" id="proofOfRegistration" name="proofOfRegistration"
+                                accept=".pdf,.jpg,.jpeg,.png" onchange="displayFileName(this, 'regFileName')">
+                            <label class="file-upload-label" for="proofOfRegistration">
+                                📄 Click to upload registration proof
+                            </label>
+                        </div>
+                        <div class="file-name" id="regFileName"></div>
+                        <small class="help-text">University acceptance letter or proof of registration</small>
+                    </div>
+                </div>
+
+                <!-- Additional Information -->
+
+                <div class="form-section">
+                    <h3>Additional Information</h3>
+
+                    <div class="form-group">
+                        <label for="specialRequirements">Special Requirements or Medical Conditions</label>
+                        <textarea id="specialRequirements" name="specialRequirements" rows="3"
+                            placeholder="Please mention any disabilities, allergies, or special needs we should be aware of"></textarea>
+                        <small class="help-text">This information helps us serve you better</small>
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="howDidYouHear">How did you hear about KS Centre? <span
+                                class="required">*</span></label>
+                        <select id="howDidYouHear" name="howDidYouHear" required>
+                            <option value="">Select One</option>
+                            <option value="google">Google Search</option>
+                            <option value="social-media">Social Media</option>
+                            <option value="friend">Friend/Family Referral</option>
+                            <option value="university">University Notice Board</option>
+
+                            <option value="agent">Student Accommodation Agent</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Terms and Conditions -->
+                <div class="form-section">
+                    <h3>Terms and Conditions</h3>
+
+                    <div class="terms-box">
+                        <h4>Application Terms & Conditions</h4>
+                        <p><strong>1. Application Processing:</strong> All applications are subject to availability and
+                            verification of submitted information.</p>
+
+                        <p><strong>2. NSFAS Priority:</strong> Students with confirmed NSFAS funding will be prioritized
+                            in room allocation, subject to availability and verification with NSFAS.</p>
+                        <p><strong>3. Booking Confirmation:</strong> Your application does not guarantee accommodation.
+                            A booking confirmation will be sent once your application is approved.</p>
+                        <p><strong>4. Payment Terms:</strong> The first month's rent and deposit are due before move-in.
+                            NSFAS-funded students must ensure their funding is active before occupancy.</p>
+                        <p><strong>5. Cancellation Policy:</strong> Written notice of 30 days is required for
+                            cancellation. Deposits are refundable subject to property condition inspection.</p>
+                        <p><strong>6. House Rules:</ strong> All residents must comply with KS Centre house rules and
+                                policies. Violation may result in lease termination.</p>
+                        <p><strong>7. Accuracy of Information:</strong> All information provided must be accurate and
+                            truthful. False information may result in application rejection.</p>
+                        <p><strong>8. Privacy:</strong> Your personal information will be used solely for accommodation
+                            purposes and will not be shared with third parties except as required by law or NSFAS
+                            verification.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                                <label for="agreeTerms">I have read and agree to the terms and conditions <span
+                                        class="required">*</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="agreeInfo" name="agreeInfo" required>
+                                <label for="agreeInfo">I confirm that all information provided is accurate and complete
+                                    <span class="required">*</span></label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="agreeNSFAS" name="agreeNSFAS">
+                                <label for="agreeNSFAS">I authorize KS Centre to verify my NSFAS status directly with
+                                    NSFAS</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-submit">Submit Application</button>
+
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- WhatsApp Float Button -->
+    <!-- <div id="footer-placeholder"></div> -->
+    <div id="whatsapp-placeholder"></div>
+
+    <script src="../components/components-integration.js"></script>
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function showNSFASInfo() {
+            document.getElementById('nsfasInfoBox').style.display = 'block';
+
+
+            document.getElementById('nsfasStatusSection').style.display = 'block';
+            document.getElementById('otherFundingSection').style.display = 'none';
+            document.getElementById('nsfasStatus').required = true;
+        }
+
+        function hideNSFASInfo() {
+            document.getElementById('nsfasInfoBox').style.display = 'none';
+            document.getElementById('nsfasStatusSection').style.display = 'none';
+            document.getElementById('nsfasStatus').required = false;
+
+
+            const fundingType = document.querySelector('input[name="fundingType"]:checked').value;
+            if (fundingType === 'bursary') {
+                document.getElementById('otherFundingSection').style.display = 'block';
+            } else {
+                document.getElementById('otherFundingSection').style.display = 'none';
+            }
+        }
+
+        function updatePrice() {
+            const select = document.getElementById('roomType');
+            const selectedOption = select.options[select.selectedIndex];
+            const price = selectedOption.getAttribute('data-price');
+
+
+            if (price) {
+                console.log('Selected room price: R' + price);
+            }
+        }
+
+        function displayFileName(input, displayId) {
+            const display = document.getElementById(displayId);
+            if (input.files && input.files[0]) {
+                display.textContent = '✓ Selected: ' + input.files[0].name;
+            }
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            // Generate reference number
+
+            const refNumber = 'KS' + Date.now().toString().slice(-8);
+            document.getElementById('refNumber').textContent = refNumber;
+
+            // Collect form data
+            const formData = {
+                referenceNumber: refNumber,
+                timestamp: new Date().toISOString(),
+                personalInfo: {
+                    firstName: document.getElementById('firstName').value,
+                    lastName: document.getElementById('lastName').value,
+                    idNumber: document.getElementById('idNumber').value,
+
+                    dateOfBirth: document.getElementById('dateOfBirth').value,
+                    gender: document.getElementById('gender').value,
+                    nationality: document.getElementById('nationality').value
+                },
+                contactInfo: {
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    address: document.getElementById('address').value,
+                    emergencyName: document.getElementById('emergencyName').value,
+                    emergencyPhone: document.getElementById('emergencyPhone').value
+                },
+                academicInfo: {
+                    institution: document.getElementById('institution').value,
+                    studentNumber: document.getElementById('studentNumber').value,
+                    course: document.getElementById('course').value,
+                    yearOfStudy: document.getElementById('yearOfStudy').value
+                },
+                accommodation: {
+                    roomType: document.getElementById('roomType').value,
+                    moveInDate: document.getElementById('moveInDate').value,
+                    leasePeriod: document.querySelector('input[name="leasePeriod"]:checked').value
+                },
+                funding: {
+                    type: document.querySelector('input[name="fundingType"]:checked').value,
+                    nsfasStatus: document.getElementById('nsfasStatus').value,
+                    nsfasNumber: document.getElementById('nsfasNumber').value,
+                    bursaryName: document.getElementById('bursaryName').value
+                },
+                additionalInfo: {
+                    specialRequirements:
+
+                        document.getElementById('specialRequirements').value,
+                    howDidYouHear: document.getElementById('howDidYouHear').value
+                }
+            };
+
+            // Log data (in production, this would send to server)
+            console.log('Application Data:', formData);
+            console.log('Priority Status:', formData.funding.type === 'nsfas' && formData.funding.nsfasStatus === 'approved' ? 'HIGH PRIORITY - NSFAS Approved' : 'Standard');
+
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Hide form
+            document.getElementById('applicationForm').style.display = 'none';
+
+            // Scroll to success message
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+
+            // Here you would send the data to your server/email
+            // The server would:
+            // 1. Store the application in a database
+            // 2. Send confirmation email to applicant
+            // 3. Send notification to KS Centre owner
+
+            // 4. Mark as priority if NSFAS approved
+
+            return false;
+        }
+
+        // Load saved theme
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+        });
+
+        // Set minimum date for move-in (today)
+        const today = new Date().toISOString().split('T')[0];
+
+
+        document.getElementById('moveInDate').setAttribute('min', today);
+
+        // Set maximum age for date of birth (120 years ago)
+        const maxDate = new Date();
+        maxDate.setFullYear(maxDate.getFullYear() - 120);
+        document.getElementById('dateOfBirth').setAttribute('max', today);
+        document.getElementById('dateOfBirth').setAttribute('min', maxDate.toISOString().split('T')[0]);
+    </script>
+</body>
+
+</html>
