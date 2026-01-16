@@ -1,1 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font-awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <title>Gallery - KS Centre Student Accommodation</title>
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="../components/colors.css">
+
+</head>
+
+<body data-theme="light">
+    <!-- header -->
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">KS Centre</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../accommodation/accommodation.html">Rooms</a></li>
+                <li><a href="../facilities/facilities.html">Facilities</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="../about/about.html">About</a></li>
+                <li><a href="../contact/contact.html">Contact</a></li>
+
+                <li><button class="theme-toggle" onclick="toggleTheme()">🌓</button></li>
+                <li><a href="../apply/apply.html" class="btn-apply">Apply Now</a></li>
+            </ul>
+            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
+        </nav>
+    </header>
+
+    <!-- page header -->
+    <section class="page-header">
+        <h1>Photo Gallery</h1>
+        <p>Take a Virtual Tour of KS Centre</p>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterGallery('all')">All Photos</button>
+            <button class="filter-btn" onclick="filterGallery('rooms')">Rooms</button>
+            <button class="filter-btn" onclick="filterGallery('facilities')">Facilities</button>
+
+            <button class="filter-btn" onclick="filterGallery('exterior')">Exterior</button>
+            <button class="filter-btn" onclick="filterGallery('common')">Common Area</button>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-section">
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Rooms -->
+            <!-- <div class="gallery-item" data-category="rooms" onclick="openModal(0)">
+                <div class="gallery-image">🛏️</div>
+                <div class="gallery-overlay">
+                    <h3>Single Room</h3>
+                    <p>Private student bedroom</ p>
+                </div>
+            </div> -->
+
+            <div class="gallery-item" data-category="rooms" onclick="openModal(1)">
+                <div class="gallery-image">🛏️</div>
+                <div class="gallery-overlay">
+                    <h3>Sharing Room</h3>
+                    <p>Comfortable shared accommodation</p>
+                </div>
+            </div>
+
+            <!-- <div class="gallery-item" data-category="rooms" onclick="openModal(2)">
+                <div class="gallery-image">🏠</div>
+                <div class="gallery-overlay">
+                    <h3>Bachelor Unit</h3>
+
+                    <p>Self-contained living space</p>
+                </div>
+            </div> -->
+
+            <!-- Facilities -->
+            <div class="gallery-item" data-category="facilities" onclick="openModal(3)">
+                <div class="gallery-image">📚</div>
+                <div class="gallery-overlay">
+                    <h3>Study Area</h3>
+                    <p>Quiet space for focused learning</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="facilities" onclick="openModal(4)">
+
+                <div class="gallery-image">🍳</div>
+                <div class="gallery-overlay">
+                    <h3>Kitchen</h3>
+                    <p>Fully equipped communal kitchen</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="facilities" onclick="openModal(5)">
+                <div class="gallery-image">🧺</div>
+                <div class="gallery-overlay">
+                    <h3>Laundromat</h3>
+                    <p>Modern laundry facilities</p>
+                </div>
+            </div>
+
+            <!-- Common Area -->
+            <div class="gallery-item" data-category="common" onclick="openModal(6)">
+                <div class="gallery-image">📺</div>
+                <div class="gallery-overlay">
+                    <h3>TV Lounge</h3>
+                    <p>Relax and socialize with friends</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="common" onclick="openModal(8)">
+                <div class="gallery-image">🛋️</div>
+                <div class="gallery-overlay">
+                    <h3>Common Lounge</h3>
+                    <p>Comfortable shared spaces</p>
+                </div>
+            </div>
+
+            <!-- Exterior -->
+            <div class="gallery-item" data-category="exterior" onclick="openModal(9)">
+                <div class="gallery-image">🏛️</div>
+                <div class="gallery-overlay">
+                    <h3>Building Exterior</h3>
+                    <p>KS Centre main building</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="exterior" onclick="openModal(10)">
+                <div class="gallery-image">🚗</div>
+                <div class="gallery-overlay">
+                    <h3>Parking Area</h3>
+                    <p>Secure parking for residents</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="exterior" onclick="openModal(11)">
+                <div class="gallery-image">🌳</div>
+                <div class="gallery-overlay">
+                    <h3>Outdoor Spaces</h3>
+                    <p>Beautiful landscaped areas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal" onclick="closeModal(event)">
+        <span class="close-modal" onclick="closeModal(event)">&times;</span>
+        <span class="modal-nav modal-prev" onclick="changeImage(-1, event)">&#10094;</span>
+
+        <span class="modal-nav modal-next" onclick="changeImage(1, event)">&#10095;</span>
+        <div class="modal-content">
+            <div class="modal-image" id="modalImage">🛏️🛏️</div>
+            <div class="modal-caption" id="modalCaption">Sharing Room</div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <h2>See It for Yourself!</h2>
+        <p>Schedule a viewing to experience KS Centre in person</p>
+        <a href="../contact/contact.html" class="btn btn-white">Book a Viewing</a>
+    </section>
+
+    <!-- Footer -->
+    <!-- WhatsApp Float Button -->
+    <div id="footer-placeholder"></div>
+    <div id="whatsapp-placeholder"></div>
+
+    <script src="../components/components-integration.js"></script>
+    <script>
+        const galleryData = [
+            // { icon: '🛏️', title: 'Single Room', description: 'Private student bedroom' },
+            { icon: '🛏️', title: 'Sharing Room', description: 'Comfortable shared accommodation' },
+            // {
+            //     icon: '🏠', title: 'Bachelor Unit',
+
+            //     description: 'Self-contained living space'
+            // },
+            { icon: '📚', title: 'Study Area', description: 'Quiet space for focused learning' },
+            { icon: '🍳', title: 'Kitchen', description: 'Fully equipped communal kitchen' },
+            { icon: '🧺', title: 'Laundromat', description: 'Modern laundry facilities' },
+            { icon: '📺', title: 'TV Lounge', description: 'Relax and socialize with friends' },
+            // { icon: '🎮', title: 'Games Room', description: 'Entertainment and recreation' },
+            { icon: '🛋️', title: 'Common Lounge', description: 'Comfortable shared spaces' },
+            { icon: '🏛️', title: 'Building Exterior', description: 'KS Centre main building' },
+            { icon: '🚗', title: 'Parking Area', description: 'Secure parking for residents' },
+
+            { icon: '🌳', title: 'Outdoor Spaces', description: 'Beautiful landscaped areas' }
+        ];
+
+        let currentImageIndex = 0;
+
+        // function toggleTheme() {
+        //     const body = document.body;
+        //     const currentTheme = body.getAttribute('data-theme');
+        //     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        //     body.setAttribute('data-theme', newTheme);
+        //     localStorage.setItem('theme', newTheme);
+        // }
+
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+
+            navLinks.classList.toggle('active');
+        }
+
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+        }
+
+        function openModal(index) {
+            currentImageIndex = index;
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+
+            modalImage.textContent = galleryData[index].icon;
+            modalCaption.textContent = `${galleryData[index].title} - ${galleryData[index].description}`;
+
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+
+        function closeModal(event) {
+            if (event.target.classList.contains('modal') || event.target.classList.contains('close-modal')) {
+                const modal = document.getElementById('imageModal');
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        function changeImage(direction, event) {
+            event.stopPropagation();
+            currentImageIndex += direction;
+
+            if (currentImageIndex >= galleryData.length) {
+
+                currentImageIndex = 0;
+            } else if (currentImageIndex < 0) {
+                currentImageIndex = galleryData.length - 1;
+            }
+
+            const modalImage = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+
+            modalImage.textContent = galleryData[currentImageIndex].icon;
+            modalCaption.textContent = `${galleryData[currentImageIndex].title} - ${galleryData[currentImageIndex].description}`;
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            const modal = document.getElementById('imageModal');
+            if (modal.style.display === 'block') {
+                if (e.key === 'ArrowLeft') {
+                    changeImage(-1, e);
+                } else if (e.key === 'ArrowRight') {
+                    changeImage(1, e);
+                } else if (e.key === 'Escape') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        });
+
+        // Load saved theme
+        window.addEventListener('DOMContentLoaded', () => {
+
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+        });
+    </script>
+</body>
+
+</html>
