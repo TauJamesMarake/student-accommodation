@@ -1,1 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font-awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <title>Accommodation - KS Centre Student Accommodation</title>
+    <link rel="stylesheet" href="accommodation.css">
+    <link rel="stylesheet" href="../components/colors.css">
+</head>
+
+<body data-theme="light">
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">KS Centre</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#">Rooms</a></li>
+                <li><a href="../facilities/facilities.html">Facilities</a></li>
+                <li><a href="../gallery/gallery.html">Gallery</a></li>
+                <li><a href="../about/about.html">About</a></li>
+
+                <li><a href="../contact/contact.html">Contact</a></li>
+                <li><button class="theme-toggle" onclick="toggleTheme()" class="fa-solid fa-lightbulb">🌓</button></li>
+                <li><a href="../apply/apply.html" class="btn-apply">Apply Now</a></li>
+            </ul>
+
+            <!-- mobile burger icon -->
+            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Our Accommodation</h1>
+        <p>Find the Perfect Room for Your Student Journey</p>
+    </section>
+
+    <!-- Intro -->
+    <section class="content">
+        <h2 class="section-title">Choose Your <span>Ideal Space</span></h2>
+        <p class="intro-text">
+            We offer a variety of accommodation options to suit different needs and budgets.
+            All our rooms are fully furnished and come with access to all our shared facilities.
+            Prices are all-inclusive with no hidden costs.
+        </p>
+    </section>
+
+    <!-- Sharing Room -->
+    <section class="room-detail" style="background-color: var(--bg-primary);">
+        <div class="room-container">
+            <div class="room-grid">
+                <div class="room-info">
+                    <h2>Sharing Room</h2>
+                    <div class="room-price">R1,800<span>/month</span></div>
+                    <div class="price-note">
+                        <p><strong>All-Inclusive:</strong> WiFi, water, electricity, and all facilities included</p>
+                    </div>
+
+                    <p class="room-description">
+                        Our most affordable option, ideal for students who enjoy companionship and
+                        making new friends. Share your space with one carefully matched roommate while
+                        enjoying all the benefits of KS Centre living.
+                    </p>
+                    <ul class="features-list">
+                        <li>Shared with one other student</li>
+                        <li>Two single beds</li>
+                        <li>Two study desks and chairs</li>
+                        <li>Two built-in wardrobes</li>
+                        <li>Shared bathroom facilities</li>
+                        <li>Free unlimited WiFi</li>
+
+                        <li>All utilities included</li>
+                        <li>Access to all common areas</li>
+                    </ul>
+                    <a href="/apply/apply.html#apply" class="btn btn-primary">Book This Room</a>
+                    <a href="/contact/contact.html#contact" class="btn btn-secondary">Schedule Viewing</a>
+                </div>
+                <div class="room-image-large">🛏️🛏️</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Single Room -->
+    <!-- <section class="room-detail">
+        <div class="room-container">
+            <div class="room-grid">
+                <div class="room-image-large">🛏️
+
+                </div>
+                <div class="room-info">
+                    <h2>Single Room</h2>
+                    <div class="room-price">R2,500<span>/month</span></div>
+                    <div class="price-note">
+                        <p><strong>All-Inclusive:</strong> WiFi, water, electricity, and all facilities included</p>
+                    </div>
+                    <p class="room-description">
+                        Perfect for students who value privacy and quiet study time. Our single rooms
+                        offer you your own personal space to focus on your studies while still being
+                        part of our vibrant student community.
+                    </p>
+                    <ul class="features-list">
+
+                        <li>Private bedroom with single bed</li>
+                        <li>Study desk and ergonomic chair</li>
+                        <li>Built-in wardrobe with ample storage</li>
+                        <li>Shared bathroom facilities</li>
+                        <li>Free unlimited WiFi</li>
+                        <li>All utilities included (water & electricity)</li>
+                        <li>Access to all common areas</li>
+                        <li>24/7 security and biometric access</li>
+                    </ul>
+                    <a href="/contact/index.html#apply" class="btn btn-primary">Book This Room</a>
+                    <a href="/contact/index.html#contact" class="btn btn-secondary">Schedule
+
+                        Viewing</a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Bachelor Unit -->
+    <!-- <section class="room-detail">
+        <div class="room-container">
+            <div class="room-grid">
+
+                <div class="room-image-large">🏠</div>
+                <div class="room-info">
+                    <h2>Bachelor Unit</h2>
+                    <div class="room-price">R3,200<span>/month</span></div>
+                    <div class="price-note">
+                        <p><strong>All-Inclusive:</strong> WiFi, water, electricity, and all facilities included</p>
+                    </div>
+                    <p class="room-description">
+                        Experience independent living with our bachelor units. These self-contained
+                        spaces offer complete privacy with your own bathroom and kitchenette, perfect
+                        for final-year students or those who prefer more independence.
+                    </p>
+
+                    <ul class="features-list">
+                        <li>Private bedroom with single bed</li>
+                        <li>Private bathroom (shower, toilet, basin)</li>
+                        <li>Kitchenette with basic appliances</li>
+                        <li>Study desk and chair</li>
+                        <li>Built-in wardrobe</li>
+                        <li>Free unlimited WiFi</li>
+                        <li>All utilities included</li>
+                        <li>Complete privacy and independence</li>
+                    </ul>
+                    <a href="index.html#apply" class="btn btn-primary">Book This Room</a>
+                    <a href="index.html#contact" class="btn btn-secondary">Schedule Viewing</a>
+                </div>
+
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Lease Information -->
+    <section class="lease-info">
+        <div class="lease-container">
+            <h2 class="section-title">Lease <span>Information</span></h2>
+            <div class="lease-grid">
+                <div class="lease-card">
+                    <h3>Lease Terms</h3>
+                    <ul>
+                        <li>10-12 month lease options available</li>
+                        <li>Flexible start dates to match academic calendar</li>
+                        <li>Early termination options available</li>
+                        <li>Month-to-month after initial period</li>
+
+                    </ul>
+                </div>
+                <div class="lease-card">
+                    <h3>What's Included</h3>
+                    <ul>
+                        <li>All furniture (bed, desk, wardrobe, chair)</li>
+                        <li>Unlimited high-speed WiFi</li>
+                        <li>Water and electricity</li>
+                        <li>Access to all facilities</li>
+                        <li>24/7 security</li>
+                        <li>Maintenance and cleaning services</li>
+                    </ul>
+                </div>
+                <div class="lease-card">
+                    <h3>Payment Options</h3>
+                    <ul>
+                        <li>Monthly payments via EFT or debit order</li>
+
+                        <li>Upfront payment discounts available</li>
+                        <li>NSFAS accepted</li>
+                        <li>No registration or admin fees</li>
+                        <li>Transparent pricing with no hidden costs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <h2>Ready to Reserve Your Room?</h2>
+        <p>Spaces fill up quickly! Contact us today to secure your accommodation for the upcoming year.</p>
+        <div class="cta-buttons">
+            <a href="/apply/apply.html#apply" class="btn btn-white">Apply Now</a>
+            <a href="tel:+27791968482" class="btn btn-white">Call: 079 196 8482</a>
+            <a href="https://wa.me/27791968482" class="btn btn-white">WhatsApp Us</a>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <!-- WhatsApp Float Button -->
+    <div id="footer-placeholder"></div>
+    <div id="whatsapp-placeholder"></div>
+
+    <script src="../components/components-integration.js"></script>
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Load saved theme
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+        });
+
+    </script>
+</body>
+
+</html>
