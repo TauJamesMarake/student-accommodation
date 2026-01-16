@@ -1,1 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font-awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <title>Facilities - KS Centre Student Accommodation</title>
+    <link rel="stylesheet" href="facilities.css">
+    <link rel="stylesheet" href="../components/colors.css">
+
+</head>
+
+<body data-theme="light">
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">KS Centre</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../accommodation/accommodation.html">Rooms</a></li>
+                <li><a href="#">Facilities</a></li>
+                <li><a href="../gallery/gallery.html">Gallery</a></li>
+                <li><a href="../about/about.html">About</a></li>
+                <li><a href="../contact/contact.html">Contact</a></li>
+
+                <li><button class="theme-toggle" onclick="toggleTheme()">🌓</button></li>
+                <li><a href="../apply/apply.html" class="btn-apply">Apply Now</a></li>
+            </ul>
+            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
+        </nav>
+    </header>
+
+    <!-- page header -->
+    <section class="page-header">
+        <h1>Our Facilities</h1>
+        <p>Everything You Need for Successful Student Living</p>
+    </section>
+
+    <!-- introduction -->
+    <section class="content">
+        <p class="intro-text">
+            At KS Centre, we provide
+
+            comprehensive facilities designed to support both your academic success
+            and personal wellbeing. From modern study spaces to recreational areas, we've thought of everything
+            to make your student life comfortable and productive.
+        </p>
+    </section>
+
+    <!-- furnished rooms -->
+    <section class="facility-section">
+        <div class="facility-container">
+            <div class="facility-image">🛏️</div>
+            <div class="facility-content">
+                <h2>Fully Furnished Rooms</h2>
+                <p>
+                    Every room comes fully furnished with quality furniture designed for student life.
+                    You can move in with just your
+
+                    personal belongings and start living comfortably from day one.
+                </p>
+                <ul class="facility-features">
+                    <li>Comfortable single or bunk beds with quality mattresses</li>
+                    <li>Study desks with ergonomic chairs</li>
+                    <li>Built-in wardrobes with ample storage space</li>
+                    <li>Curtains and window coverings included</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- study areas -->
+    <section class="facility-section">
+
+        <div class="facility-container">
+            <div class="facility-content">
+                <h2>Dedicated Study Areas</h2>
+                <p>
+                    We understand the importance of a quiet, focused environment for your studies.
+                    Our study areas are designed to help you concentrate and achieve your academic goals.
+                </p>
+                <ul class="facility-features">
+                    <li>Study rooms with comfortable seating</li>
+                    <li>Individual study desks with good lighting</li>
+                    <li>High-speed WiFi throughout study areas</li>
+                    <li>Power outlets for laptops and devices</li>
+                    <li>Air-conditioned environment
+
+                        for comfort</li>
+                </ul>
+            </div>
+            <div class="facility-image">📚</div>
+        </div>
+    </section>
+
+    <!-- common areas -->
+    <section class="facility-section">
+        <div class="facility-container">
+            <div class="facility-image">🛋️</div>
+            <div class="facility-content">
+                <h2>Common Area & Lounge</h2>
+                <p>
+                    Take a break from studies and socialize with fellow students in our comfortable common areas.
+                    Perfect for group projects, socializing, or just relaxing.
+                </p>
+
+                <ul class="facility-features">
+                    <li>Spacious TV lounge with DSTV</li>
+                    <li>Comfortable seating</li>
+                    <li>Pool table and entertainment</li>
+                    <li>Outdoor seating areas</li>
+                    <li>Perfect for group study sessions</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- kitchen facilities -->
+    <section class="facility-section">
+        <div class="facility-container">
+            <div class="facility-content">
+                <h2>Kitchen Facilities</h2>
+                <p>
+
+                    Our shared kitchen facilities are well-equipped for students who prefer to prepare their own meals.
+                    Clean, modern, and spacious enough for multiple students.
+                </p>
+                <ul class="facility-features">
+                    <li>Modern stoves and ovens</li>
+                    <li>Refrigerators</li>
+                    <li>Microwave ovens</li>
+                    <li>Ample counter space for meal preparation</li>
+                    <li>Dining tables and chairs</li>
+                </ul>
+            </div>
+            <div class="facility-image">🍳</div>
+        </div>
+    </section>
+
+    <!-- laundry -->
+    <section class="facility-section">
+        <div class="facility-container">
+            <div class="facility-image">🧺</div>
+            <div class="facility-content">
+                <h2>Laundry Facilities</h2>
+                <p>
+                    Keep your clothes fresh and clean with our on-site laundromat. Modern washing machines
+                    and dryers available for all residents.
+                </p>
+                <ul class="facility-features">
+                    <li>Multiple washing machines</li>
+                    <li>Tumble dryers for quick drying</li>
+                    <li>Ironing facilities available</li>
+                    <li>Affordable rates for laundry
+
+                        services</li>
+                    <li>Clean, well-maintained facilities</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- security -->
+    <section class="facility-section">
+        <div class="facility-container">
+            <div class="facility-content">
+                <h2>24/7 Security</h2>
+                <p>
+                    Your safety is our top priority. We maintain strict security measures to ensure
+                    all residents feel safe and secure at all times.
+                </p>
+                <ul class="facility-features">
+
+                    <li>24-hour security personnel on duty</li>
+                    <li>Biometric access control system</li>
+                    <li>CCTV surveillance throughout the premises</li>
+                    <li>Secure perimeter fencing</li>
+                    <li>Controlled visitor access</li>
+                    <li>Emergency response protocols</li>
+                </ul>
+            </div>
+            <div class="facility-image">🔒</div>
+        </div>
+    </section>
+
+    <!-- parking -->
+    <section class="facility-section">
+        <div class="facility-container">
+
+            <div class="facility-image">🚗</div>
+            <div class="facility-content">
+                <h2>Secure Parking</h2>
+                <p>
+                    If you have a vehicle, rest easy knowing it's safely parked within our secure premises.
+                    Parking bays are available for residents at no additional cost.
+                </p>
+                <ul class="facility-features">
+                    <li>Dedicated parking bay for residents</li>
+                    <li>Secure, fenced parking area</li>
+                    <li>Well-lit parking space</li>
+                    <li>CCTV monitoring of the parking area</li>
+                    <li>No additional parking fees</li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- quick features -->
+    <section class="quick-features">
+        <h2 class="section-title">Additional <span>Amenities</span></h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📶</div>
+                <h3>High-Speed WiFi</h3>
+                <p>Unlimited high-speed internet access throughout the residence</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💧</div>
+                <h3>Water & Electricity</h3>
+                <p>All utilities included in your monthly rent with no hidden costs</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🧹</div>
+                <h3>Cleaning Services</h3>
+                <p>Regular cleaning and maintenance of common areas</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📞</div>
+                <h3>24/7 Support</h3>
+                <p>Management available round the clock for emergencies</p>
+            </div>
+
+            <!-- <div class="feature-card">
+                <div class="feature-icon">🔧</div>
+                <h3>Maintenance</h3>
+                <p>Quick response to maintenance requests and repairs</p>
+            </div> -->
+            <!-- <div class="feature-card">
+                <div class="feature-icon">🚌</div>
+                <h3>Transport Access</h3>
+
+                <p>Easy access to public transport routes to universities</p>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <h2>Experience Our Facilities Firsthand</h2>
+        <p>Schedule a viewing to see all our amazing facilities in person!</p>
+        <a href="../contact/contact.html" class="btn btn-white">Schedule a Viewing</a>
+    </section>
+
+    <!-- Footer -->
+    <!-- WhatsApp Float Button -->
+    <div id="footer-placeholder"></div>
+    <div id="whatsapp-placeholder"></div>
+
+    <script src="../components/components-integration.js"></script>
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Load saved theme
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+        });
+    </script>
+</body>
+
+</html>
