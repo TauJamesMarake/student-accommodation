@@ -16,23 +16,7 @@
 
 <body data-theme="light">
     <!-- header -->
-    <header>
-        <nav>
-            <a href="../index.html" class="logo">KS Centre</a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../accommodation/accommodation.html">Rooms</a></li>
-                <li><a href="../facilities/facilities.html">Facilities</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="../about/about.html">About</a></li>
-                <li><a href="../contact/contact.html">Contact</a></li>
-
-                <li><button class="theme-toggle" onclick="toggleTheme()">🌓</button></li>
-                <li><a href="../apply/apply.html" class="btn-apply">Apply Now</a></li>
-            </ul>
-            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
 
     <!-- page header -->
     <section class="page-header">
@@ -178,18 +162,11 @@
     <script src="../components/components-integration.js"></script>
     <script>
         const galleryData = [
-            // { icon: '🛏️', title: 'Single Room', description: 'Private student bedroom' },
             { icon: '🛏️', title: 'Sharing Room', description: 'Comfortable shared accommodation' },
-            // {
-            //     icon: '🏠', title: 'Bachelor Unit',
-
-            //     description: 'Self-contained living space'
-            // },
             { icon: '📚', title: 'Study Area', description: 'Quiet space for focused learning' },
             { icon: '🍳', title: 'Kitchen', description: 'Fully equipped communal kitchen' },
             { icon: '🧺', title: 'Laundromat', description: 'Modern laundry facilities' },
             { icon: '📺', title: 'TV Lounge', description: 'Relax and socialize with friends' },
-            // { icon: '🎮', title: 'Games Room', description: 'Entertainment and recreation' },
             { icon: '🛋️', title: 'Common Lounge', description: 'Comfortable shared spaces' },
             { icon: '🏛️', title: 'Building Exterior', description: 'KS Centre main building' },
             { icon: '🚗', title: 'Parking Area', description: 'Secure parking for residents' },
@@ -199,13 +176,13 @@
 
         let currentImageIndex = 0;
 
-        // function toggleTheme() {
-        //     const body = document.body;
-        //     const currentTheme = body.getAttribute('data-theme');
-        //     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        //     body.setAttribute('data-theme', newTheme);
-        //     localStorage.setItem('theme', newTheme);
-        // }
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
 
         function toggleMenu() {
             const navLinks = document.getElementById('navLinks');
