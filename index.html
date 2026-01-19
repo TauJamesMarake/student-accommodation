@@ -17,40 +17,24 @@
 
 <body data-theme="light">
     <!-- header -->
-    <header>
-        <nav>
-            <a href="#" class="logo">KS Centre</a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="./accommodation/accommodation.html">Rooms</a></li>
-                <li><a href="./facilities/facilities.html">Facilities</a></li>
-                <li><a href="./gallery/gallery.html">Gallery</a></li>
-                <li><a href="./about/about.html">About</a></li>
-
-                <li><a href="./contact/contact.html">Contact</a></li>
-                <li><button class="theme-toggle" onclick="toggleTheme()" class="fa-solid fa-lightbulb">🌓</button></li>
-                <li><a href="./apply/apply.html" class="btn-apply">Apply Now</a></li>
-            </ul>
-
-            <!-- mobile burger icon -->
-            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <h1>Welcome to KS Centre</h1>
-        <p margin-top="1rem"><strong>From Home to Home</strong></p>
-        <p>A Student Accommodation in Welkom, Free State</p>
-        <div class="hero-buttons">
-            <a href="./apply/apply.html" class="btn btn-primary">Apply Now</a>
-            <a href="./accommodation/accommodation.html" class="btn btn-secondary">View Rooms</a>
-        </div>
-        <div class="contact-info">
-            <p>
-                <i class="fa-brands fa-whatsapp fa-2x"></i>
-                Call/WhatsApp: <a href="tel:+27791968482">079 196 8482</a>
-            </p>
+        <div class="hero-text">
+            <h1>Welcome to KS Centre</h1>
+            <p>A Student Accommodation in Welkom, Free State</p>
+            <!-- <p font-weight="200" class="hero-slogan"><strong>From Home to Home</strong></p> -->
+            <div class="hero-buttons">
+                <a href="./apply/apply.html" class="btn btn-primary">Apply Now</a>
+                <a href="./accommodation/accommodation.html" class="btn btn-secondary">View Rooms</a>
+            </div>
+            <div class="contact-info">
+                <p>
+                    <i class="fa-brands fa-whatsapp fa-2x"></i>
+                    Call/WhatsApp: <a href="tel:+27791968482">079 196 8482</a>
+                </p>
+            </div>
         </div>
     </section>
 
@@ -108,7 +92,9 @@
         <div class="rooms-grid">
 
             <div class="room-card">
-                <div class="room-image">🛏️🛏️</div>
+                <div class="room-image">
+                    <!-- 🛏️🛏️ -->
+                </div>
                 <div class="room-content">
                     <h3>Sharing Room</h3>
                     <div class="room-price">R3,800<span>/month</span></div>
@@ -134,22 +120,6 @@
                         <li>Study desk & chair</li>
                         <li>Built-in wardrobe</li>
                         <li>Shared bathroom</li>
-                        <li>All utilities included</li>
-                    </ul>
-                    <a href="#apply" class="btn btn-primary" style="width: 100%; text-align: center;">Book Now</a>
-                </div>
-            </div> -->
-
-            <!-- <div class="room-card">
-                <div class="room-image">🏠</div>
-                <div class="room-content">
-                    <h3>Bachelor Unit</h3>
-                    <div class="room-price">R3,200<span>/month</span></div>
-                    <ul class="room-features">
-                        <li>Private bedroom</li>
-                        <li>Private bathroom</li>
-                        <li>Kitchenette</li>
-                        <li>Study area</li>
                         <li>All utilities included</li>
                     </ul>
                     <a href="#apply" class="btn btn-primary" style="width: 100%; text-align: center;">Book Now</a>
@@ -196,17 +166,17 @@
         <h2>Ready to Secure Your Room?</h2>
         <p>Limited spaces available for the upcoming academic year. Apply now to reserve your spot!</p>
         <div class="hero-buttons">
-            <a href="/contact/contact.html" class="btn btn-secondary">Contact Us</a>
+            <a href="./contact/contact.html" class="btn btn-secondary">Contact Us</a>
             <a href="tel:+27791968482" class="btn btn-primary">Call Now</a>
         </div>
     </section>
 
     <!-- Footer -->
     <!-- WhatsApp Float Button -->
-    <div id="footer-placeholder"></div>
-    <div id="whatsapp-placeholder"></div>
+    <!-- <div id="footer-placeholder"></div>
+    <div id="whatsapp-placeholder"></div> -->
 
-    <script src="/components/components-integration.js"></script>
+    <script src="./components/components-integration.js"></script>
     <script>
         // .. light/dark mode toggle
         // function toggleTheme() {
@@ -216,10 +186,17 @@
         //     body.setAttribute('data-theme', newTheme);
         // }
 
-        // function toggleMenu() {
-        //     const navLinks = document.getElementById('navLinks');
-        //     navLinks.classList.toggle('active');
-        // }
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        };
+
+        // Load saved theme
+        window.addEventListener('DOMContentLoaded', () => {
+
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+        });
 
         //.. smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
