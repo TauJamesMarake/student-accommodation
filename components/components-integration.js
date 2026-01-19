@@ -33,6 +33,13 @@ function loadComponent(componentPath, targetSelector) {
 
 // Initialize components when DOM is loaded
 document.addEventListener('DOMContentLoaded', function () {
+
+    if (!document.querySelector('#header-placeholder')) {
+        const headerPlaceholder = document.createElement('div');
+        headerPlaceholder.id = 'header-placeholder';
+        document.body.appendChild(headerPlaceholder);
+    }
+    loadComponent('/components/header.html', '#header-placeholder');
     // Load footer component
     // Create footer placeholder if it doesn't exist
     if (!document.querySelector('#footer-placeholder')) {
@@ -69,20 +76,3 @@ window.addEventListener('DOMContentLoaded', () => {
 
     document.body.setAttribute('data-theme', savedTheme);
 });
-
-// Load saved theme
-window.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-
-    document.body.setAttribute('data-theme', savedTheme);
-});
-
-/**
- * Alternative Method: Using innerHTML (simpler but less robust)
- * 
- * Add these placeholders to your HTML:
- * <div id="footer-placeholder"></div>
- * <div id="whatsapp-placeholder"></div>
- * 
- * Then use this script to load components
- */

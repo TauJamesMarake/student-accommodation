@@ -1,7 +1,6 @@
 <style>
-    /* Footer Styles */
-    footer {
-        background-color: var(--primary-black);
+    .footer {
+        background-color: var(--bg-secondary);
         color: var(--primary-white);
         padding: 3rem 5%;
     }
@@ -89,12 +88,11 @@
             <h3>Quick Links</h3>
             <ul>
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="../about/about.html">About Us</a></li>
-                <li><a href="../accommodation/accommodation.html">Accommodation</a></li>
+                <li><a href="../accommodation/accommodation.html">Rooms</a></li>
                 <li><a href="../facilities/facilities.html">Facilities</a></li>
-
                 <li><a href="../gallery/gallery.html">Gallery</a></li>
                 <li><a href="../contact/contact.html">Contact</a></li>
+                <li><a href="../about/about.html">About Us</a></li>
                 <li><a href="../apply/apply.html">Apply Now</a></li>
             </ul>
         </div>
@@ -140,4 +138,10 @@
     // Auto-update copyright year
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 
+    // Load saved theme
+    window.addEventListener('DOMContentLoaded', () => {
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.body.setAttribute('data-theme', savedTheme);
+    });
 </script>

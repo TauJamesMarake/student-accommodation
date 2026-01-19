@@ -108,17 +108,13 @@
     }
 </style>
 
-<!-- WhatsApp Button -->
-<!-- Replace the phone number with your actual WhatsApp number -->
 <a href="https://wa.me/27791968482" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
     aria-label="Chat with us on WhatsApp" id="whatsappButton">
     💬
-    <!-- Optional: Add unread badge -->
-    <!-- <span class="whatsapp-badge">1</span> -->
 </a>
 
 <script>
-    // Optional: Add pulse effect on page load to draw attention
+    // Pulse effect on page load to draw attention
     document.addEventListener('DOMContentLoaded', function () {
         const whatsappBtn = document.getElementById('whatsappButton');
 
@@ -129,10 +125,9 @@
             whatsappBtn.classList.remove('pulse');
         }, 10000); // Remove pulse after 10 seconds
 
-        // Optional: Track WhatsApp button clicks
+        // Tracks WhatsApp button clicks
         whatsappBtn.addEventListener('click', function () {
             console.log('WhatsApp button clicked');
-            // You can add analytics tracking here
         });
     });
 </script>
