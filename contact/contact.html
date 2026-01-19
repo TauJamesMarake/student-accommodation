@@ -15,25 +15,7 @@
 
 <body data-theme="light">
     <!-- page header -->
-    <header>
-        <nav>
-            <a href="../index.html" class="logo">KS Centre</a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../accommodation/accommodation.html">Rooms</a></li>
-                <li><a href="../facilities/facilities.html">Facilities</a></li>
-                <li><a href="../gallery/gallery.html">Gallery</a></li>
-                <li><a href="../about/about.html">About</a></li>
-
-                <li><a href="#">Contact</a></li>
-                <li><button class="theme-toggle" onclick="toggleTheme()" class="fa-solid fa-lightbulb">🌓</button></li>
-                <li><a href="../apply/apply.html" class="btn-apply">Apply Now</a></li>
-            </ul>
-
-            <!-- mobile burger icon -->
-            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
 
     <!-- header -->
     <section class="page-header">
@@ -223,7 +205,6 @@
 
         // .. load saved theme
         window.addEventListener('DOMContentLoaded', () => {
-
             const savedTheme = localStorage.getItem('theme') || 'light';
             document.body.setAttribute('data-theme', savedTheme);
         });
