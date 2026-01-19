@@ -16,23 +16,7 @@
 
 <body data-theme="light">
     <!-- Header -->
-    <header>
-        <nav>
-            <a href="../index.html" class="logo">KS Centre</a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../accommodation/accommodation.html">Rooms</a></li>
-                <li><a href="#">Facilities</a></li>
-                <li><a href="../gallery/gallery.html">Gallery</a></li>
-                <li><a href="../about/about.html">About</a></li>
-                <li><a href="../contact/contact.html">Contact</a></li>
-
-                <li><button class="theme-toggle" onclick="toggleTheme()">🌓</button></li>
-                <li><a href="../apply/apply.html" class="btn-apply">Apply Now</a></li>
-            </ul>
-            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
 
     <!-- page header -->
     <section class="page-header">
@@ -54,7 +38,7 @@
     <!-- furnished rooms -->
     <section class="facility-section">
         <div class="facility-container">
-            <div class="facility-image">🛏️</div>
+            <div class="facility-image one">🛏️</div>
             <div class="facility-content">
                 <h2>Fully Furnished Rooms</h2>
                 <p>
@@ -93,14 +77,16 @@
                         for comfort</li>
                 </ul>
             </div>
-            <div class="facility-image">📚</div>
+            <div class="facility-image-two">
+                <!-- <div class="facility-image">📚</div> -->
+            </div>
         </div>
     </section>
 
     <!-- common areas -->
     <section class="facility-section">
         <div class="facility-container">
-            <div class="facility-image">🛋️</div>
+            <div class="facility-image-lounge"><!-- 🛋️ --></div>
             <div class="facility-content">
                 <h2>Common Area & Lounge</h2>
                 <p>
@@ -137,14 +123,14 @@
                     <li>Dining tables and chairs</li>
                 </ul>
             </div>
-            <div class="facility-image">🍳</div>
+            <div class="facility-image-kitchen"><!-- 🍳 --></div>
         </div>
     </section>
 
     <!-- laundry -->
     <section class="facility-section">
         <div class="facility-container">
-            <div class="facility-image">🧺</div>
+            <div class="facility-image-laundry"> <!-- 🧺 --></div>
             <div class="facility-content">
                 <h2>Laundry Facilities</h2>
                 <p>
@@ -183,7 +169,7 @@
                     <li>Emergency response protocols</li>
                 </ul>
             </div>
-            <div class="facility-image">🔒</div>
+            <div class="facility-image-security"><!--🔒--></div>
         </div>
     </section>
 
@@ -191,7 +177,7 @@
     <section class="facility-section">
         <div class="facility-container">
 
-            <div class="facility-image">🚗</div>
+            <div class="facility-image-parking"><!--🚗--></div>
             <div class="facility-content">
                 <h2>Secure Parking</h2>
                 <p>
