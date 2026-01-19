@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
         headerPlaceholder.id = 'header-placeholder';
         document.body.appendChild(headerPlaceholder);
     }
-    loadComponent('/components/header.html', '#header-placeholder');
+    loadComponent('./components/header.html', '#header-placeholder');
 
     // Load footer component
     // Create footer placeholder if it doesn't exist
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         document.body.appendChild(footerPlaceholder);
     }
-    loadComponent('/components/footer.html', '#footer-placeholder');
+    loadComponent('./components/footer.html', '#footer-placeholder');
 
     // Load WhatsApp button component
     // Create WhatsApp placeholder if it doesn't exist
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
         whatsappPlaceholder.id = 'whatsapp-placeholder';
         document.body.appendChild(whatsappPlaceholder);
     }
-    loadComponent('/components/whatsapp-button.html', '#whatsapp-placeholder');
+    loadComponent('./components/whatsapp-button.html', '#whatsapp-placeholder');
 
 });
 
