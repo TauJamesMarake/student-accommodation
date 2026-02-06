@@ -1,0 +1,62 @@
+:root {
+    /* Primary Brand Colors */
+    --primary-white: #FFFFFF;
+    --primary-gold: #f1a446;
+    --primary-black: #1A1A1A;
+
+    /* Gold Variations */
+    --gold-dark: #9A7A4F;
+    --gold-light: #D4B896;
+
+    /* Text Colors */
+    --text-dark: #2C2C2C;
+    --text-light: #E8E8E8;
+
+    /* Background Colors */
+
+    --bg-light: #FAFAFA;
+    --bg-dark: #0F0F0F;
+}
+
+/* Dark Theme Colors */
+[data-theme="dark"] {
+    --bg-primary: var(--bg-dark);
+    --bg-secondary: var(--primary-black);
+    --text-primary: var(--text-light);
+    --text-secondary: #B8B8B8;
+    --card-bg: #242424;
+    --input-bg: #2C2C2C;
+}
+
+/* Light Theme Colors */
+[data-theme="light"] {
+    --bg-primary: var(--primary-white);
+    --bg-secondary: var(--bg-light);
+    --text-primary: var(--text-dark);
+    --text-secondary: #666666;
+    --card-bg: var(--primary-white);
+
+    --input-bg: var(--bg-light);
+}
+
+/* Additional Utility Colors */
+:root {
+    /* Status Colors */
+    --success-color: #4CAF50;
+    --error-color: #e74c3c;
+    --warning-color: #f39c12;
+    --info-color: #3498db;
+
+    /* WhatsApp Brand Color */
+    --whatsapp-green: #25D366;
+
+    /* Shadow Colors */
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.2);
+    --shadow-dark: rgba(0, 0, 0, 0.3);
+
+    /* Gold Shadows */
+    --shadow-gold: rgba(193, 154, 107, 0.2);
+
+    --shadow-gold-dark: rgba(193, 154, 107, 0.3);
+}
