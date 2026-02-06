@@ -9,6 +9,15 @@ function loadComponent(componentPath, targetSelector) {
             return response.text();
         })
         .then(html => {
+            // Compute a base prefix from the componentPath (e.g. '../' or '') and
+            // replace any __BASE__ placeholders inside the component HTML so links
+            // inside components resolve relative to the current page.
+            let basePrefix = '';
+            const m = componentPath.match(/^(.*)components\//);
+            if (m) basePrefix = m[1];
+
+            html = html.replace(/__BASE__/g, basePrefix);
+
             const target = document.querySelector(targetSelector);
             if (target) {
                 target.innerHTML = html;
