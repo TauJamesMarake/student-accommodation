@@ -9,15 +9,6 @@ function loadComponent(componentPath, targetSelector) {
             return response.text();
         })
         .then(html => {
-            // Compute a base prefix from the componentPath (e.g. '../' or '') and
-            // replace any __BASE__ placeholders inside the component HTML so links
-            // inside components resolve relative to the current page.
-            let basePrefix = '';
-            const m = componentPath.match(/^(.*)components\//);
-            if (m) basePrefix = m[1];
-
-            html = html.replace(/__BASE__/g, basePrefix);
-
             const target = document.querySelector(targetSelector);
             if (target) {
                 target.innerHTML = html;
@@ -45,12 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
         headerPlaceholder.id = 'header-placeholder';
         document.body.appendChild(headerPlaceholder);
     }
-    // Compute prefix to components folder relative to current page depth
-    const pathParts = location.pathname.split('/').filter(Boolean);
-    const depth = Math.max(0, pathParts.length - 1);
-    const basePrefix = depth === 0 ? '' : '../'.repeat(depth);
-
-    loadComponent(basePrefix + 'components/header.html', '#header-placeholder');
+    loadComponent('../components/header.html', '#header-placeholder');
 
     // footer
     // Create footer placeholder if it doesn't exist
@@ -59,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
         footerPlaceholder.id = 'footer-placeholder';
         document.body.appendChild(footerPlaceholder);
     }
-    loadComponent(basePrefix + 'components/footer.html', '#footer-placeholder');
+    loadComponent('../components/footer.html', '#footer-placeholder');
 
     // WhatsApp button
     // Create WhatsApp placeholder if it doesn't exist
@@ -68,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
         whatsappPlaceholder.id = 'whatsapp-placeholder';
         document.body.appendChild(whatsappPlaceholder);
     }
-    loadComponent(basePrefix + 'components/whatsapp-button.html', '#whatsapp-placeholder');
+    loadComponent('../components/whatsapp-button.html', '#whatsapp-placeholder');
 
 });
 
