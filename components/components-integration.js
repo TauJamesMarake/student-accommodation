@@ -9,6 +9,13 @@ function loadComponent(componentPath, targetSelector) {
             return response.text();
         })
         .then(html => {
+            // Determine page depth to fix relative paths in loaded component
+            const pathDepth = window.location.pathname.split('/').filter(p => p && p !== 'student-accommodation').length;
+            const basePrefix = pathDepth > 1 ? '../'.repeat(pathDepth - 1) : '';
+
+            // Replace relative ../ links in the component HTML so they work from any page
+            html = html.replace(/href="\.\.\/(?!\.\.)/g, `href="${basePrefix}`);
+
             const target = document.querySelector(targetSelector);
             if (target) {
                 target.innerHTML = html;
@@ -30,15 +37,19 @@ function loadComponent(componentPath, targetSelector) {
 
 
 document.addEventListener('DOMContentLoaded', function () {
+    // Determine the correct component path based on current page location
+    const pathParts = window.location.pathname.split('/');
+    const isRootPage = window.location.pathname.endsWith('index.html') ||
+        window.location.pathname.endsWith('student-accommodation/');
+    const componentPath = isRootPage ? './components/' : '../components/';
+
     // header
     if (!document.querySelector('#header-placeholder')) {
         const headerPlaceholder = document.createElement('div');
         headerPlaceholder.id = 'header-placeholder';
         document.body.appendChild(headerPlaceholder);
     }
-    loadComponent('../components/header.html', '#header-placeholder');
-    loadComponent('./components/header.html', '#header-placeholder');
-    loadComponent('components/header.html', '#header-placeholder');
+    loadComponent(componentPath + 'header.html', '#header-placeholder');
 
     // footer
     if (!document.querySelector('#footer-placeholder')) {
@@ -46,9 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
         footerPlaceholder.id = 'footer-placeholder';
         document.body.appendChild(footerPlaceholder);
     }
-    loadComponent('../components/footer.html', '#footer-placeholder');
-    loadComponent('./components/footer.html', '#footer-placeholder');
-    loadComponent('components/footer.html', '#footer-placeholder');
+    loadComponent(componentPath + 'footer.html', '#footer-placeholder');
 
     // WhatsApp button
     if (!document.querySelector('#whatsapp-placeholder')) {
@@ -56,9 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
         whatsappPlaceholder.id = 'whatsapp-placeholder';
         document.body.appendChild(whatsappPlaceholder);
     }
-    loadComponent('../components/whatsapp-button.html', '#whatsapp-placeholder');
-    loadComponent('./components/whatsapp-button.html', '#whatsapp-placeholder');
-    loadComponent('components/whatsapp-button.html', '#whatsapp-placeholder');
+    loadComponent(componentPath + 'whatsapp-button.html', '#whatsapp-placeholder');
 
 });
 
