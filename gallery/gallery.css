@@ -171,6 +171,13 @@ body {
     font-size: 0.9rem;
 }
 
+.gallery-image img {
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
 /* Modal */
 .modal {
     display: none;
@@ -293,10 +300,6 @@ body {
     background-color: var(--bg-light);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.1);
 }
 
 /* Responsive */

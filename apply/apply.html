@@ -152,10 +152,8 @@
                             <label for="institution">University/College <span class="required">*</span></label>
                             <select id="institution" name="institution" required>
                                 <option value="">Select Institution</option>
-                                <option value="university-of-free-state">University of the Free State</option>
                                 <option value="central-university-technology">Central University of Technology</option>
-                                <option value="goldfields-tvet">Goldfields TVET College</option>
-                                <option value="other">Other</option>
+                                <!-- <option value="goldfields-tvet">Goldfields TVET College</option> -->
                             </select>
                         </div>
                         <div class="form-group">
@@ -196,7 +194,7 @@
                             <label for="roomType">Room Type Preference <span class="required">*</span></label>
                             <select id="roomType" name="roomType" required onchange="updatePrice()">
                                 <option value="">Select Room Type</option>
-                                <option value="sharing" data-price="1800">Sharing Room (R1,800/month)</option>
+                                <option value="sharing" data-price="3800">Sharing Room (R3,800/month)</option>
 
                                 <!-- <option value="single" data-price="2500">Single Room (R2,500/month)</option> -->
                                 <!-- <option value="bachelor" data-price="3200">Bachelor Unit (R3,200/month)</option> -->
@@ -252,7 +250,7 @@
 
                     <!-- NSFAS Information Box -->
                     <div id="nsfasInfoBox" class="nsfas-info" style="display: none;">
-                        <h4>📋 NSFAS Accommodation Application Process</h4>
+                        <h4>NSFAS Accommodation Application Process</h4>
                         <p>If you are funded by NSFAS, please follow these steps:</p>
                         <ul>
                             <li><strong>Step 1:</strong> Ensure you have applied for NSFAS funding and received approval
@@ -309,7 +307,6 @@
                     <!-- Other Funding Details -->
                     <div id="otherFundingSection" style="display: none;">
                         <div class="form-group">
-
                             <label for="bursaryName">Bursary/Sponsor Name</label>
                             <input type="text" id="bursaryName" name="bursaryName">
                         </div>
@@ -328,7 +325,7 @@
                             <input type="file" id="idDocument" name="idDocument" accept=".pdf,.jpg,.jpeg,.png" required
                                 onchange="displayFileName(this, 'idFileName')">
                             <label class="file-upload-label" for="idDocument">
-                                📄 Click to upload ID document
+                                <i class="fa fa-cloud-upload"></i> Click to upload ID document
                             </label>
                         </div>
                         <div class="file-name" id="idFileName"></div>
@@ -341,7 +338,7 @@
                             <input type="file" id="proofOfRegistration" name="proofOfRegistration"
                                 accept=".pdf,.jpg,.jpeg,.png" onchange="displayFileName(this, 'regFileName')">
                             <label class="file-upload-label" for="proofOfRegistration">
-                                📄 Click to upload registration proof
+                                <i class="fa fa-cloud-upload"></i> Click to upload registration proof
                             </label>
                         </div>
                         <div class="file-name" id="regFileName"></div>

@@ -28,7 +28,6 @@ function loadComponent(componentPath, targetSelector) {
                     document.body.appendChild(newScript);
                 });
             }
-
         })
         .catch(error => {
             console.error('Error loading component:', error);
