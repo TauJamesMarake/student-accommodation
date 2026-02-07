@@ -28,7 +28,7 @@ function loadComponent(componentPath, targetSelector) {
         });
 }
 
-// Initialise components when DOM is loaded
+
 document.addEventListener('DOMContentLoaded', function () {
     // header
     if (!document.querySelector('#header-placeholder')) {
@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function () {
     loadComponent('components/header.html', '#header-placeholder');
 
     // footer
-    // Create footer placeholder if it doesn't exist
     if (!document.querySelector('#footer-placeholder')) {
         const footerPlaceholder = document.createElement('div');
         footerPlaceholder.id = 'footer-placeholder';
@@ -52,7 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
     loadComponent('components/footer.html', '#footer-placeholder');
 
     // WhatsApp button
-    // Create WhatsApp placeholder if it doesn't exist
     if (!document.querySelector('#whatsapp-placeholder')) {
         const whatsappPlaceholder = document.createElement('div');
         whatsappPlaceholder.id = 'whatsapp-placeholder';
@@ -72,13 +70,13 @@ function toggleTheme() {
     localStorage.setItem('theme', newTheme);
 }
 
-// load saved theme
+// saved theme
 window.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.body.setAttribute('data-theme', savedTheme);
 });
 
-//.. smooth scrolling
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();

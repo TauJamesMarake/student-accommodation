@@ -156,7 +156,7 @@
 
     <!-- Footer -->
     <!-- WhatsApp Float Button -->
-    <!-- <div id="footer-placeholder"></div> -->
+    <div id="footer-placeholder"></div>
     <div id="whatsapp-placeholder"></div>
 
     <script src="../components/components-integration.js"></script>
@@ -175,14 +175,6 @@
         ];
 
         let currentImageIndex = 0;
-
-        function toggleTheme() {
-            const body = document.body;
-            const currentTheme = body.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            body.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        }
 
         function toggleMenu() {
             const navLinks = document.getElementById('navLinks');
@@ -262,7 +254,7 @@
             }
         });
 
-        // Load saved theme
+        // saved theme
         window.addEventListener('DOMContentLoaded', () => {
 
             const savedTheme = localStorage.getItem('theme') || 'light';

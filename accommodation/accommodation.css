@@ -51,7 +51,7 @@ body {
     background-image: url('../components/images/front\ view.jpg');
     background-size: auto;
     padding: 5rem 5%;
-    text-align: top;
+    text-align: center;
     color: var(--primary-white);
 }
 
