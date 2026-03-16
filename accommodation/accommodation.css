@@ -114,9 +114,9 @@ body {
     align-items: start;
 }
 
-.room-image-large {
+.room-image-large img {
     background: linear-gradient(135deg, var(--gold-light) 0%, var(--primary-gold) 100%);
-    background-image: url('../components/images/bedroom\ sharing2.jpg');
+    /* background-image: url('../components/images/bedroom\ sharing2.jpg'); */
     background-position: center;
     background-size: cover;
     height: 400px;

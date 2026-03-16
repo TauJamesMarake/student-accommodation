@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <meta name="description" content="a minimal student accomodation website">
+    <meta name="author" content="Tau J. Marake">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="../components/colors.css">
+
+    <title>Admin - Applications</title>
+
+</head>
+
+<body data-theme="light">
+    <div class="main-section">
+        <div class="section-title">
+            <h1 class="section-title-title">Student Applications</h1>
+            <h1 class="section-title-home"><a href="../index.html">Home</a></h1>
+        </div>
+        <div id="stats"></div>
+        <table id="applicationsTable">
+            <thead>
+                <tr>
+                    <th>Ref Number</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Room Type</th>
+                    <th>Funding</th>
+                    <th>Priority</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script> async function loadApplications() {
+            const response = await fetch('/api/admin/applications');
+            const data = await response.json();
+            const tbody = document.querySelector('#applicationsTable tbody');
+            tbody.innerHTML = '';
+            data.applications.forEach(app => {
+                const row = tbody.insertRow();
+                row.innerHTML = ` <td>${app.reference_number}</td> <td>${app.first_name} ${app.last_name}</td> <td>${app.email}</td> <td>${app.room_type}</td> <td>${app.funding_type}${app.nsfas_status ? ` (${app.nsfas_status})` : ''}</td> <td>${app.priority > 5 ? '<span class="priority-high">HIGH</span>' : 'Normal'}</td> <td>${new Date(app.created_at).toLocaleDateString()}</td> `;
+            });
+        } loadApplications();
+        setInterval(loadApplications, 30000); // Refresh every 30 seconds
+    </script>
+</body>
+
+</html>
